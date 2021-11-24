@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'react-datepicker/dist/react-datepicker';
+
+.icon-btn {
+    @apply flex items-center gap-3 p-2 pr-4 rounded-3xl text-bg2 font-bold text-xs;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.btn {
+    @apply mobile3:py-4 mobile3:px-6 px-4  py-3.5 rounded-3xl mobile3:text-xs text-xxs font-bold;
+}
+
+.status {
+    @apply flex py-3 w-bar h-10 items-center justify-center gap-2 font-bold text-xs relative;
+}
+
+.checkbox {
+    @apply h-4 w-4 bg-gray3 dark:bg-bg1-dark -mt-1 border border-purple rounded-sm flex items-center justify-center;
+}
+
+.checkbox.active {
+    @apply bg-purple;
+}
+
+.checkbox.active img {
+    @apply mb-0.5 mr-0.5 block;
+}
+
+.checkbox img {
+    @apply hidden;
+}
+
+.label {
+    @apply flex text-gray4 dark:text-gray3 text-xs mb-2 w-full justify-between;
+}
+
+.labelError {
+    @apply flex text-red text-xs mb-2 w-full justify-between;
+}
+
+.input {
+    @apply block w-full h-12 border border-input dark:border-bg2-dark mobile2:px-5 px-3 rounded mb-6 text-black dark:text-white dark:bg-bg2-dark text-xs font-bold;
+}
+
+.inputError {
+    @apply block w-full h-12 border border-red px-5 rounded mb-6 text-black dark:bg-bg2-dark text-xs font-bold;
+}
+
+.input2 {
+    @apply block w-full h-12 border border-input dark:border-bg2-dark px-2 rounded mb-2 text-black dark:text-white dark:bg-bg2-dark text-xs font-bold;
+}
+
+.input2Error {
+    @apply block w-full h-12 border border-red px-2 rounded mb-2 text-black dark:text-white dark:bg-bg2-dark text-xs font-bold;
+}
+
+.formHeight1 {
+    height: calc(100vh - theme('spacing.20'));
+}
+
+.formBody {
+    @apply fixed tab:top-0 bottom-0 -left-0 z-30 w-full tab3:w-form1_tab tab:w-form1 tab:h-screen bg-bg2 dark:bg-bg1-dark tab3:rounded-tr-20 tab3:rounded-br-20 tab:pl-bar mobile2:pt-12 pt-6 pb-24;
+}
+
+.overlay {
+    @apply fixed top-0 left-0 z-20 w-screen h-screen bg-black;
 }
